@@ -60,7 +60,7 @@ for (url in leg_urls) {
     bio <- page %>% html_node(".biography p") %>% html_text(trim = TRUE)
     
     legislators_clean <-  rbind(legislators_clean, data.frame(name, district, hometown, party, leadership, committees, bio, url))
-  }        
+  }
 }
 
 #timestamp the date of this
