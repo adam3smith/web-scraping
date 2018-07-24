@@ -42,6 +42,6 @@ legislators <-  rbind(legislators, new_row))
 
 ## Troubleshooting
 
-* Let's run this script... uh-oh that doesn't seem to work. What do you think is going wrong?
+* Let's run this script ... uh-oh that doesn't seem to work. What do you think is going wrong?
 
   **[Go to the next page](cleaning-data)**
