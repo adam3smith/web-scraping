@@ -37,7 +37,7 @@ new_row <- data.frame(address, background, committees, biography)
 ```
 * Then we use a command called `rbind` to add them to our existing table:
 ```
-legislators <-  rbind(legislators, new_row))
+legislators <-  rbind(legislators, new_row)
 ```
 
 ## Troubleshooting
