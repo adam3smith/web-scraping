@@ -1,5 +1,8 @@
-# Scraping a single page
-
+---
+title: Scraping a Single Page
+description: Starting with just one...
+layout: default
+---
 * Let's begin by scraping information from a single page:
 http://www.ohiohouse.gov/scott-wiggam
 * Let's try to get the contact information, background, biography, and committee memberships
@@ -25,3 +28,4 @@ Scrape the page by creating the following  variables
 * biography
   
    
+  **[Go to the next page](/looping-multiple-pages)**

@@ -1,6 +1,9 @@
-# Simple Screen Scraping with R
-
-## Goals 
+---
+title: Introduction
+description: What you will learn -- and what you won't
+layout: default
+---
+## Goals
 
 ### What You Will Learn
 * Why use screensraping?

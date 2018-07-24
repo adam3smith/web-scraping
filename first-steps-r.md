@@ -1,4 +1,8 @@
-# First Steps in R
+---
+title: First Steps in R
+description: Understanding the very, very basics
+layout: default
+---
 
 ## What is R?
 * R is a powerful programming language mainly used for statistical analysis and other data-related tasks
@@ -22,4 +26,6 @@ In `2 + 3 %<>  + 7` the 5 before the %>% gets passed on as the x, so the total i
   * `html_node(page, css selector)` will return the *first* node of a given page matched by the CSS selector.
   * `html_nodes(page, css selector)` works identically to `html_node` but selects *all* nodes matched by the css selector
   * `html_text(node)` extracts all text from a nodes
-  * `html_attr(node, attr)` extracts the content of a given attribute from a node. 
+  * `html_attr(node, attr)` extracts the content of a given attribute from a node.
+  
+  **[Go to the next page](/scraping-single-page)**

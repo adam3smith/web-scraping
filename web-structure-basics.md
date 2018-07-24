@@ -1,5 +1,8 @@
-# Web Scraping and the Structure of Websites
-
+---
+title: The Basic Structure of a Webpage
+description: You can't scrape what you don't understand
+layout: default
+---
 * We talk about when scraping when we retrieve structured information from content on a website
 * One example many of you will know is Zotero, which scrapes information from website into bibliographic metadata
 * Web scraping is effective when we have
@@ -74,4 +77,6 @@ On our [working example](https://www.legislature.ohio.gov/legislators/legislator
 ### Exercise
 * Using the CSS Selector Gadget, find a CSS Selector that includes all *House Representatives* but nothing else.
 
-* Caution: The CSS Selector Gadget is wonderfully helpful, but it *can* lead you astray by producing overly specific selectors. 
+* Caution: The CSS Selector Gadget is wonderfully helpful, but it *can* lead you astray by producing overly specific selectors.
+
+**[Go to the next page](/first-steps-r)**
