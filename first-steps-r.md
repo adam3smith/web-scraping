@@ -28,4 +28,4 @@ In `2 + 3 %<>  + 7` the 5 before the %>% gets passed on as the x, so the total i
   * `html_text(node)` extracts all text from a nodes
   * `html_attr(node, attr)` extracts the content of a given attribute from a node.
   
-  **[Go to the next page](/scraping-single-page)**
+  **[Go to the next page](scraping-single-page)**

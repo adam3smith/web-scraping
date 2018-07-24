@@ -42,4 +42,4 @@ Can you turn this into a dataset?
 
 ## The Finished Code
 
-There are, of course, many ways to do this. [Here is the finalized script](/ohio-legislature.R) I came up with that creates two tables -- one very crude, one cleaned up -- with all 98 current house representatives.
+There are, of course, many ways to do this. [Here is the finalized script](ohio-legislature.R) I came up with that creates two tables -- one very crude, one cleaned up -- with all 98 current house representatives.

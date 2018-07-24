@@ -14,7 +14,7 @@ read_html("https://www.legislature.ohio.gov/legislators/legislator-directory")
 ```
 leg_urls <- directory %>% html_nodes("#houseDirectory a")
 ```
-### Excercise
+### Exercise
 We want the URL to their homepages, not their name. Can you figure out how to get that?
 
 ## Looping through URLs
@@ -44,4 +44,4 @@ legislators <-  rbind(legislators, new_row))
 
 * Let's run this script... uh-oh that doesn't seem to work. What do you think is going wrong?
 
-  **[Go to the next page](/cleaning-data)**
+  **[Go to the next page](cleaning-data)**

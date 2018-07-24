@@ -36,3 +36,5 @@ layout: default
 install.packages("stringr")
 install.packages("rvest")
 ```
+
+**[Go to the next page](web-structure-basics)**

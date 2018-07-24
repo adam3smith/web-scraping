@@ -79,4 +79,4 @@ On our [working example](https://www.legislature.ohio.gov/legislators/legislator
 
 * Caution: The CSS Selector Gadget is wonderfully helpful, but it *can* lead you astray by producing overly specific selectors.
 
-**[Go to the next page](/first-steps-r)**
+**[Go to the next page](first-steps-r)**

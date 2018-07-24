@@ -28,4 +28,4 @@ Scrape the page by creating the following  variables
 * biography
   
    
-  **[Go to the next page](/looping-multiple-pages)**
+  **[Go to the next page](looping-multiple-pages)**
