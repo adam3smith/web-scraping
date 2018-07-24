@@ -34,6 +34,7 @@ Here's how a *very* simple web page may look like
 ```
 
 * Modern website, however, have one more feature, however, that adds to their structure. Every element can have one or more "attributes" that are included in the beginning tag of the node like so:
+
 ```
 <div class="article-text">Some text</div>
 <div class="article-comment">Some comment</div>
@@ -41,11 +42,14 @@ Here's how a *very* simple web page may look like
 
 * Attributes can be any string, but there are two attributes that are particularly common and well defined: "class" and "id".
 * The main difference between the two to keep in mind is that the same `class` can occur multiple times on a single webpage. `class` is often used to mean that this is content of a certain type, e.g. part of the text of the main article, e.g.
+
 ```
 <div class="article-text">Some text</div>
 <div class="article-text">Some comment</div>
 ```
+
 * On the other hand, in an even decently well written webpage, every `id` should only occur one. `id` is used to label specific content, e.g.
+
 ```
 <div id="abstract">Abstract for the text</div>
 <div id="text-body">The body of the article</div>
@@ -71,7 +75,7 @@ You can look at how an element of a webpage is represented in the html code by l
 On our [working example](https://www.legislature.ohio.gov/legislators/legislator-directory) page, what would the CSS selector be for the "Legislator Directory" heading?
 
 ### A Helpful Tool
-* There are many tools that can help you to generate CSS selectors. I like the css selector gadget, which comes as a [Chrome Extension]() and a [bookmarklet]()
+* There are many tools that can help you to generate CSS selectors. I like the css selector gadget, which comes as a [Chrome Extension](https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb?hl=en) and a [bookmarklet](https://selectorgadget.com/)
 * By allowing you to select elements in and out of the selection, it makes it easy to generate a CSS selector
 
 ### Exercise

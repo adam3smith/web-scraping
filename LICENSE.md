@@ -1,0 +1,1 @@
+This workshop and associated website is published under the [Creative Commons Attribution ShareAlike (CC-BY-SA) 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/legalcode) ![CC-BY-SA logo](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
