@@ -15,7 +15,7 @@ layout: default
 ## Basic commands
 * The most important command in R is the assignment arrow, `<-`. This allows you to set a value or set of values to a variable as in `x <- 5`.
 * You can `use alt+-`as a shortcut for the assignment arrow
-* Within R, we're going to be using a set of packages that are part of what is called the "tidyverse". For those packages, the symbol `%>%` is of particular importance: it effectively passes an argument on from left to right, serving as the first argument of the next function. A example will help make this clear:
+* Within R, we're going to be using a set of packages that are part of what is called the "tidyverse". For those packages, the symbol `%>%` (referred to as a "pipe") is of particular importance: it effectively passes an argument on from left to right, serving as the first argument of the next function. A example will help make this clear:
 In `2 + 3 %>%  + 7` the 5 before the `%>%` gets passed on as the x, so the total is 12
    * If this isn't completely clear, don't worry about it. The example later on make this very intuitive.
   

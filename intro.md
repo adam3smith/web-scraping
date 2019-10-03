@@ -31,10 +31,11 @@ layout: default
 ## Installing
 * You should have R and R Studio installed on your computer already. If not, please do so now.
 * Please start R studio now
-* Please install the `rvest` and the `string` package
+* Please install the `rvest`, the `stringr`, and the  `magrittr` package.
 ```
 install.packages("stringr")
 install.packages("rvest")
+install.packages("magrittr")
 ```
 
 **[Go to the next page](web-structure-basics)**

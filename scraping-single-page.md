@@ -4,28 +4,24 @@ description: Starting with just one...
 layout: default
 ---
 * Let's begin by scraping information from a single page:
-http://www.ohiohouse.gov/scott-wiggam
-* Let's try to get the contact information, background, biography, and committee memberships
+https://www.parliament.uk/biographies/commons/ms-diane-abbott/172
+* Let's try to get the contact name, constituency, party, email, website and social media information, and when they were first elected.
 * We begin by loading the page:
-`page <- read_html("http://www.ohiohouse.gov/scott-wiggam")`
-* A good CSS selector for contact and background is `.contactModule .data`.
+`page <- read_html("https://www.parliament.uk/biographies/commons/ms-diane-abbott/172")`
+* We can use the selector gadget to find a good CSS selector for the name  `h1`.
 Using this with our R functions:
-`contact <-page%>% html_nodes(".contactModule .data") %>% html_text(trim = TRUE)`
+`name <-page%>% html_nodes("h1") %>% html_text(trim = TRUE)`
 
-* We can look at this simply by using `contact`.
-* It looks like we have text from two nodes, so how can we select one? R's command for this is a bit weird: `[[(1)` will select the first node, etc. So
-```
-contact <-page%>% html_nodes(".contactModule .data") %>% html_text(trim = TRUE) %>% `[[(1)`
-```
-
-will select the first of these and `[[(2)` the second.
+* We can look at this simply by using `name`.
 
 ## Exercise
-Scrape the page by creating the following  variables
-* address (with the contact info)
-* background
-* committees
-* biography
+Scrape and create variables for:
+* constituency
+* party
+
+If we look at the CSS selector for email using our gadget, that looks really messy! In those situations, it's often good to use "Inspect Element" in your browser and construct the CSS by hand.
+
+
   
    
   **[Go to the next page](looping-multiple-pages)**

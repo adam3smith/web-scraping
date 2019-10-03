@@ -12,8 +12,8 @@ layout: default
 * This is distinct from "web crawling", where we try to download a large number of whole webpages. R can be used for that, too, using a different package.
 
 ## Our Example
-* We will work on scraping some basic information for all represenatives in the Ohio House of Representatives:
-https://www.legislature.ohio.gov/legislators/legislator-directory
+* We will work on scraping some basic information for all MPs in the UK's House of Commons:
+https://www.parliament.uk/mps-lords-and-offices/mps/
 
 ## The Structure of the Web
 * A webpage is made up out of a number elements, called "nodes," that hold its content. Every node begins with a `<>` and ends with a `</>` tag. Nodes are nested in each other.
@@ -45,14 +45,15 @@ Here's how a *very* simple web page may look like
 
 ```
 <div class="article-text">Some text</div>
-<div class="article-text">Some comment</div>
+<div class="article-text">Some more text</div>
 ```
 
-* On the other hand, in an even decently well written webpage, every `id` should only occur one. `id` is used to label specific content, e.g.
+* On the other hand, in an every decently well written webpage, every `id` should only occur one. `id` is used to label specific content, e.g.
 
 ```
 <div id="abstract">Abstract for the text</div>
 <div id="text-body">The body of the article</div>
+<div description="special-content">This is somehow special</div>
 ```
 
 ### Looking at Webpage Structure
@@ -69,17 +70,18 @@ You can look at how an element of a webpage is represented in the html code by l
 * To select a node anywhere within a different node, use the outer node followed by a space, then the inner node: `body h1`
 * To select an element with a given id use # followed by the id: `#abstract`
 * To select *all* elements of a given class, use . followed by the class name: `.article-text`. *Remember:* There can be (and often are) multiple elements with the same class.
-* To select a specific element of a given c.ass (or id), simply join them together `div.article-text`
+* To select a specific element of a given class (or id), simply join them together `div.article-text`
+* To select an element based on a different attribute, use `[attribute="value"]`, i.e. `[description="special-content"]`
 
 ### Exercise
-On our [working example](https://www.legislature.ohio.gov/legislators/legislator-directory) page, what would the CSS selector be for the "Legislator Directory" heading?
+Looking at a specific UK MP, [Diane Abbott](https://www.parliament.uk/biographies/commons/ms-diane-abbott/172), what would the CSS selector be for her Constituency?
 
 ### A Helpful Tool
 * There are many tools that can help you to generate CSS selectors. I like the css selector gadget, which comes as a [Chrome Extension](https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb?hl=en) and a [bookmarklet](https://selectorgadget.com/)
 * By allowing you to select elements in and out of the selection, it makes it easy to generate a CSS selector
 
 ### Exercise
-* Using the CSS Selector Gadget, find a CSS Selector that includes all *House Representatives* but nothing else.
+* Using the CSS Selector Gadget, on the [directory of MPs](https://www.parliament.uk/mps-lords-and-offices/mps/) find a CSS Selector that includes all letters at the top but nothing else.
 
 * Caution: The CSS Selector Gadget is wonderfully helpful, but it *can* lead you astray by producing overly specific selectors.
 
