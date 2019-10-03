@@ -4,7 +4,7 @@ description: Starting with just one...
 layout: default
 ---
 * Let's begin by scraping information from a single page:
-https://www.parliament.uk/biographies/commons/ms-diane-abbott/172
+[https://www.parliament.uk/biographies/commons/ms-diane-abbott/172](https://www.parliament.uk/biographies/commons/ms-diane-abbott/172)
 * Let's try to get the contact name, constituency, party, email, website and social media information, and when they were first elected.
 * We begin by loading the page:
 `page <- read_html("https://www.parliament.uk/biographies/commons/ms-diane-abbott/172")`

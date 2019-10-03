@@ -13,7 +13,7 @@ layout: default
 
 ## Our Example
 * We will work on scraping some basic information for all MPs in the UK's House of Commons:
-https://www.parliament.uk/mps-lords-and-offices/mps/
+[https://www.parliament.uk/mps-lords-and-offices/mps/](https://www.parliament.uk/mps-lords-and-offices/mps/)
 
 ## The Structure of the Web
 * A webpage is made up out of a number elements, called "nodes," that hold its content. Every node begins with a `<>` and ends with a `</>` tag. Nodes are nested in each other.
