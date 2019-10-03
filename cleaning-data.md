@@ -5,14 +5,15 @@ layout: default
 ---
 
 ## Cleaning Data
-* The data as we have it now is not terribly appealing. It's in big blocks; there is a lot of "noise in it"
-* We now take these blocks and extract cleaned-up data from it.
-* For this we use a tool called "regular expressions" or "regex"
+* We'll want to clean up our data a bit more and prepare it for analysis
+
+
+## Regex Basics
+* We'll use a little bit of  tool called "regular expressions" or "regex"
 * Regular expressions turn you into a superhero:
 ![XKCD: Regular Expressions](https://imgs.xkcd.com/comics/regular_expressions.png)
 * We will (again) only cover the basics. There's a cheatsheet e.g. here: https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/
 
-## Regex Basics
 * A dot serves as a wildcard: t.p matches tip, top, tap, t3p, t-p, etc.
 * A + means "repeat one or more time". So but+er matches buter, butter, buttter, etc.
   * The + operator stops matching at line breaks
@@ -21,25 +22,44 @@ layout: default
 * \\d matches any digit
 * \\s matches a space
 * parentheses around parts of a regex let you select what's matched by the parentheses separately.
-* `^` denotes the beginning of a line.  
+* `^` denotes the beginning of a line and $ it's end.
 
 ## Regex in R
-* In R, regex are implemented in the `stringr` package. Most importantly the function `str_match(string, "regex")`
-* Let's go back to our individual pages and start with the contact information. It always starts with "Respresentative Name". We can use this:
+* In R, regex are implemented in the `stringr` package. Most importantly the function `str_match(string, "regex")`. An analogus function is `str_remove(string, "regex")` which removes a pattern from a string.
+
+* Let's go back to our individual pages and convert the range of first office holding into the year the representative first one office. We'll want to extract the first year from a string like "Jun 1987 - Mar 2015". We'll do this by finding four consecutive digits, and then picking the first of those:
 ```
-name <- str_match(address, "Representative (.+)")
+firstElection <- str_match(firstElection, "\\d{4}" ) %>% `[[`(1)
 ```
-* Let's take a look at this using `name` -- OK, it appears we want the 2nd element. We know how to do this:
+We can use this to create a new variable called `tenure` to show how long they've been in parliament.
+
 ```
-name <- name`[[`(2)
+tenure <- 2019 - as.numeric(as.character(firstElection))
 ```
-### Exercise
-Can you do the same for District, Hometown, and Party?
-Anything else you would like to scrape?
+But this is just for a single value. The `dplyr` package has a terrific function for making our lives easier and apply this to the whole dataset:
+
+```
+mps <- mps %>% mutate(firstElection = str_match(firstElection, "\\d{4}") %>% `[[`(1))
+mps <- mps %>% mutate(tenure = 2019 - as.numeric(as.character(firstElection)))
+```
 
 ### Exercise
-Can you turn this into a dataset?
+Can you remove the MP from the end of the names variable?
+Some websites have three ... at the end. Can you remove those?
+
+
+Finally, we'll want to add binary variables for whether an MP lists a Twitter account, website, and Facebook page. We can use a function called `ifelse(condition, valueIfTrue, valueIfFalse)`. Combined with mutate, this gives us:
+```
+mps <- mps %>% mutate(hasTwitter = ifelse(!is.na(twitter), "1", "0"))
+```
+
+### Exercise
+Can you do the same for Facebook and websites?
 
 ## The Finished Code
 
-There are, of course, many ways to do this. [Here is the finalized script](ohio-legislature.R) I came up with that creates two tables -- one very crude, one cleaned up -- with all 98 current house representatives.
+There are, of course, many ways to do this. [Here is the finalized script](UK-commons.R)
+
+## Analysis
+
+What sorts of analyses could we run with this data?
