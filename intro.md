@@ -25,7 +25,7 @@ layout: default
 
 ## Workshop basics
 * If you're struggling with something, please ask. Someone else is struggling with the same thing.
-* If you need technical help, we have two "runners" who will be able to help you throughout the workshop
+* If you need technical help, we have a "runner" who will be able to help you throughout the workshop
 * You should have a green and a yellow post-it at your seat. When we're working on a task, please use the yellow post it to signal that you need help. Use the green one to signal you're done.
 
 ## Installing
