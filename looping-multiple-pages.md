@@ -72,8 +72,6 @@ scrape <- function(url) {
 }
 ```
 
-### Exercise
-* Look at the second line of the function. What do you think is going on there?
 
 
 * Then we can plug this function into a command called `rbind`
@@ -83,6 +81,6 @@ assembly <-  rbind(assembly, scrape(url))
 
 ## Troubleshooting
 
-* Did this run on your first try? What could be going wrong? 
+* Did this run on your first try? What could be going wrong?
 
   **[Go to the next page](cleaning-data)**
