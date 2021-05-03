@@ -11,10 +11,11 @@ layout: default
 * Selecting html nodes using CSS selectors
 * Using R's `rvest` package for scraping content
 * A tiny bit about tidyverse-style R coding
-* Maybe (though probably not) using R's `stringr` package to clean up imported web data
+* A little about using R's `stringr` package to clean up imported web data
 
 ### What You Will _Not_ Learn
 * Web crawling
+* Getting data from APIs ("Application Programming Interfaces")
 * Writing great R code, or really much about coding in R; I'll focus on the webscraping and may gloss over aspects of R
 * How to scrape from very complex pages, e.g. those built as javascript applications
 
@@ -31,11 +32,11 @@ layout: default
 ## Installing
 * You should have R and R Studio installed on your computer already. If not, please do so now.
 * Please start R studio now
-* Please install the `rvest`, the `stringr`, and the  `magrittr` package.
+* Please install the `rvest`, the `stringr`, and the  `dplyr` package.
 ```
 install.packages("stringr")
 install.packages("rvest")
-install.packages("magrittr")
+install.packages("dplyr")
 ```
 
 **[Go to the next page](web-structure-basics)**

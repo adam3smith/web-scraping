@@ -12,7 +12,7 @@ layout: default
 * This is distinct from "web crawling", where we try to download a large number of whole webpages. R can be used for that, too, using a different package.
 
 ## Our Example
-* We will work on scraping some basic information for all Assembly Members of the New York State Assembly: https://nyassembly.gov/mem/
+* We will work on scraping some basic information for all Assembly Members of the New York State Assembly: [https://nyassembly.gov/mem/](https://nyassembly.gov/mem/)
 
 ## The Structure of the Web
 * A webpage is made up out of a number elements, called "nodes," that hold its content. Every node begins with a `<>` and ends with a `</>` tag. Nodes are nested in each other.

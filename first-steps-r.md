@@ -1,6 +1,6 @@
 ---
-title: First Steps in R
-description: Understanding the very, very basics
+title: Our R environment -- the tidyverse
+description: Ceci n'est pas une pipe
 layout: default
 ---
 
