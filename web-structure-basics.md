@@ -12,8 +12,7 @@ layout: default
 * This is distinct from "web crawling", where we try to download a large number of whole webpages. R can be used for that, too, using a different package.
 
 ## Our Example
-* We will work on scraping some basic information for all MPs in the UK's House of Commons:
-[https://www.parliament.uk/mps-lords-and-offices/mps/](https://www.parliament.uk/mps-lords-and-offices/mps/)
+* We will work on scraping some basic information for all Assembly Members of the New York State Assembly: https://nyassembly.gov/mem/
 
 ## The Structure of the Web
 * A webpage is made up out of a number elements, called "nodes," that hold its content. Every node begins with a `<>` and ends with a `</>` tag. Nodes are nested in each other.
@@ -33,6 +32,10 @@ Here's how a *very* simple web page may look like
 </html>
 ```
 
+* You'll see, above some elements that will occur in virtually every webpage:
+  * The `head` is not visible in the browser window, but often contains metadata, including the "title" that's displayed in your open browser tab
+  * Elements like `h1` which are headings. There should only be one `h1` element, but there can be multiple `h2`, `h3`, etc.
+  * Elements like `div`, `span`, and `p` which structure how text and images are displayed on the page.
 * Modern website, however, have one more feature, however, that adds to their structure. Every element can have one or more "attributes" that are included in the beginning tag of the node like so:
 
 ```
@@ -57,7 +60,7 @@ Here's how a *very* simple web page may look like
 ```
 
 ### Looking at Webpage Structure
-You can look at how an element of a webpage is represented in the html code by looking at
+You can look at how an element of a webpage is represented in the html code by using the "Inspect" function of your browser. Go ahead and try this right now!
 
 ## Selecting Nodes: Cascading Stylesheets (CSS)
 
@@ -74,14 +77,14 @@ You can look at how an element of a webpage is represented in the html code by l
 * To select an element based on a different attribute, use `[attribute="value"]`, i.e. `[description="special-content"]`
 
 ### Exercise
-Looking at a specific UK MP, [Diane Abbott](https://www.parliament.uk/biographies/commons/ms-diane-abbott/172), what would the CSS selector be for her Constituency?
+Looking at a specific Assembly Member, [Khaleel Anderson](https://nyassembly.gov/mem/Khaleel-M-Anderson), what would the CSS selector be for his district?
 
 ### A Helpful Tool
 * There are many tools that can help you to generate CSS selectors. I like the css selector gadget, which comes as a [Chrome Extension](https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb?hl=en) and a [bookmarklet](https://selectorgadget.com/)
 * By allowing you to select elements in and out of the selection, it makes it easy to generate a CSS selector
 
 ### Exercise
-* Using the CSS Selector Gadget, on the [directory of MPs](https://www.parliament.uk/mps-lords-and-offices/mps/) find a CSS Selector that includes all letters at the top but nothing else.
+* Using the CSS Selector Gadget, on the [directory of the Assembly](https://nyassembly.gov/mem/) find a CSS Selector that includes all email addresses, but nothing else.
 
 * Caution: The CSS Selector Gadget is wonderfully helpful, but it *can* lead you astray by producing overly specific selectors.
 
