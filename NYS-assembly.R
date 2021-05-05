@@ -76,15 +76,13 @@ fullAssembly <- merge(assembly, bpTable, by = "district")
 
 
 # Cleaning & basic analysis -----------------------------------------------
-
+# Convert Date joined into year for simplicity
+fullAssembly$yearSince <-
+  fullAssembly$memberSince %>% str_extract("\\d{4}") %>% as.numeric()
 
 # Check party composition
 fullAssembly$party <- as.factor(fullAssembly$party)
 summary(fullAssembly$party)
-
-# Convert Date joined into year for simplicyt
-fullAssembly$yearSince <-
-  fullAssembly$memberSince %>% str_extract("\\d{4}") %>% as.numeric()
 
 summary(fullAssembly$yearSince)
 hist(fullAssembly$yearSince)
@@ -119,10 +117,7 @@ ageViolin
 
 
 # Topic modeling ----------------------------------------------------------
-
-
-topicTerms <- function(data, k = 6) {
-  # From https://tutorials.quanteda.io/machine-learning/topicmodel/
+tokenize_bios <- function (data){
   bioTokens <-
     tokens(
       data$biography,
@@ -132,7 +127,36 @@ topicTerms <- function(data, k = 6) {
     )
   bioTokens <-
     tokens_remove(bioTokens, pattern = c(stopwords("en"), stopwords("es")))
+  return(bioTokens)
+}
 
+
+
+# Word clouds
+
+bio_wordCloud <- function(data){
+  bioTokens <- tokenize_bios(data)
+  dfmat_bio <- dfm(bioTokens) %>%
+    dfm_trim(
+      min_termfreq = 0.8,
+      termfreq_type = "quantile",
+      max_docfreq = 0.1,
+      docfreq_type = "prop"
+    )
+  textplot_wordcloud(dfmat_bio)  
+}
+
+bio_wordCloud(fullAssembly)
+bio_wordCloud(assemblyDem)
+bio_wordCloud(assemblyRep)
+
+
+# Run topic models
+
+topicTerms <- function(data, k = 6) {
+  # From https://tutorials.quanteda.io/machine-learning/topicmodel/
+  bioTokens <- tokenize_bios(data)
+  
   dfmat_bio <- dfm(bioTokens) %>%
     dfm_trim(
       min_termfreq = 0.8,
@@ -140,14 +164,12 @@ topicTerms <- function(data, k = 6) {
       max_docfreq = 0.3,
       docfreq_type = "prop"
     )
-
+  
   tmodBio <- textmodel_lda(dfmat_bio, k)
   return (terms(tmodBio, 10))
 }
 
 
-
-# Run topic models
 topicTerms(fullAssembly)
 topicTerms(assemblyDem)
 topicTerms(assemblyRep)
