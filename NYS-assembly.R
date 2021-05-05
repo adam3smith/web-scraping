@@ -143,7 +143,7 @@ bio_wordCloud <- function(data){
       max_docfreq = 0.1,
       docfreq_type = "prop"
     )
-  textplot_wordcloud(dfmat_bio)  
+  plot(textplot_wordcloud(dfmat_bio))  
 }
 
 bio_wordCloud(fullAssembly)
