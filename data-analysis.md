@@ -3,7 +3,7 @@ title: Data analysis
 description: What can we learn from this?
 layout: default
 ---
-The focus of this course isn't on data analysis, so this last part is more of a "show and tell" of some simple things you could do with the data.
+The focus of today isn't on data analysis, so this last part is more of a "show and tell" of some simple things you could do with the data.
 
 ## Comparing tenure
 We left off with creating the `yearSince` variable. Let's do some basic analysis on that. We'll first turn "party" into a factor variable, and use that to look at the composition of the assembly:
@@ -18,7 +18,15 @@ Now let's look at summary statistics and a histogram for the years in which asse
 summary(fullAssembly$yearSince)
 hist(fullAssembly$yearSince)
 ```
-This looks like a very young assembly with some very old members! Is this the same for both parties?
+This looks like a very young assembly with some very old members!
+Let's look at the oldest ones:
+
+```
+arrange(fullAssembly, yearSince) %>% head()
+```
+
+
+Is this the same for both parties?
 Let's create subsets for parties?
 
 ```

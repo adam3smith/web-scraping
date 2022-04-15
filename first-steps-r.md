@@ -1,5 +1,5 @@
 ---
-title: Our R environment -- the tidyverse
+title: Our R environment – the tidyverse
 description: Ceci n'est pas une pipe
 layout: default
 ---

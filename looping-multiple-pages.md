@@ -4,13 +4,13 @@ description: Now we're talking!
 layout: default
 ---
 ## Getting the URLs
-* Let's first find the CSS to give us all the MPs from  https://assembly.state.ny.us/mem/ : `.mem-name a`
+* Let's first find the CSS to give us all the MPs from  https://nyassembly.gov/mem/ : `.mem-name a`
 
 Again, we're lucky! This is very clean
 
 * We now load this page into R:
 ```
-directory <- read_html("https://assembly.state.ny.us/mem/")
+directory <- read_html("https://nyassembly.gov/mem/")
 ```
 * And then extract a list of a legislators.
 ```

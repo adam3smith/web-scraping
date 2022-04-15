@@ -1,5 +1,5 @@
 ---
-title: "Data munging" -- Combining Multiple data source
+title: "Data munging" – Combining Multiple data source
 description: From messy to tidy data
 layout: default
 ---
@@ -56,7 +56,7 @@ fullAssembly <- merge(assembly, bpTable, by = "district")
 * `^` denotes the beginning of a line and $ it's end.
 
 ## Regex in R
-* In R, regex are implemented in the `stringr` package. Most importantly the function `str_match(string, "regex")`. An analogus function is `str_remove(string, "regex")` (we've already used that) which removes a pattern from a string, and `str_extract(string, "regex")` which allows us to extract one part of a string quickly.
+* In R, regex are implemented in the `stringr` package. Most importantly the function `str_match(string, "regex")`. An analogous function is `str_remove(string, "regex")` (we've already used that) which removes a pattern from a string, and `str_extract(string, "regex")` which allows us to extract one part of a string quickly.
 
 ## Cleaning the memberSince variable
 ### Exercise
@@ -69,3 +69,5 @@ How would you go about doing that?
 ## Analysis
 
 What sorts of analyses could we run with this data?
+
+**[Go to the next page](data analysis)**

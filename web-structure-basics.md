@@ -10,6 +10,7 @@ layout: default
    * Presented in the same structure on a page or across multiple pages
    * And we're interested in retrieving that information
 * This is distinct from "web crawling", where we try to download a large number of whole webpages. R can be used for that, too, using a different package.
+* It's also different from using API, or Application Programming Interfaces, that are specifically designed to allow you to request structured information
 
 ## Our Example
 * We will work on scraping some basic information for all Assembly Members of the New York State Assembly: [https://nyassembly.gov/mem/](https://nyassembly.gov/mem/)
@@ -51,7 +52,7 @@ Here's how a *very* simple web page may look like
 <div class="article-text">Some more text</div>
 ```
 
-* On the other hand, in an every decently well written webpage, every `id` should only occur one. `id` is used to label specific content, e.g.
+* On the other hand, in a decently well written webpage, every `id` should only occur one. `id` is used to label ("identify") specific content, e.g.
 
 ```
 <div id="abstract">Abstract for the text</div>
