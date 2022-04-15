@@ -1,5 +1,5 @@
 ---
-title: "Data munging" – Combining Multiple data source
+title: Data munging – Combining Multiple data source
 description: From messy to tidy data
 layout: default
 ---
