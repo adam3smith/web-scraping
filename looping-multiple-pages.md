@@ -14,7 +14,7 @@ directory <- read_html("https://nyassembly.gov/mem/")
 ```
 * And then extract a list of a legislators.
 ```
-leg_urls <- directory %>% html_nodes(".mem-name a")
+leg_urls <- directory |> html_nodes(".mem-name a")
 ```
 Note that we use `html_nodes` (with nodes in the plural) here, since we want all 150 members.
 
@@ -24,6 +24,7 @@ We want the URL to their homepages, not their name. Can you figure out how to ge
 
 ## Looping through URLs
 * When you have a list with multiple elements, R allows you to easily loop through it using `for (element in list){}`. So in our case we want to use
+
 ```
 for (url in leg_urls) {}
 ```
@@ -31,12 +32,15 @@ for (url in leg_urls) {}
 * This code will now cycle through all URLs and extract the same elements. But it won't actually write them down!
 
 * For this we first create a table *outside* of our loop. Data tables in R are called data frames.
+
 ```
 assembly <-data.frame(stringsAsFactors = F)
 ```
+
 * This just creates an empty table called `assembly`. The bit in parentheses makes sure that what we scrape gets stored as regular text.
 * The only thing left now is to write the values to this table every time we're at the end of the loop.
 * There's a trick to this: first we convert the values to a table with just one row:
+
 ```
 results <- data.frame(name, district, email, biography)
 ```
@@ -54,19 +58,19 @@ scrape <- function(url) {
   page <- read_html(url)
 
   name <-
-    page %>% html_node('#head-mem-name') %>% html_text(trim = TRUE)
+    page |> html_node('#head-mem-name') |> html_text(trim = TRUE)
   district <-
-    page %>% html_node('#head-mem-dist') %>% html_text(trim = TRUE)
+    page |> html_node('#head-mem-dist') |> html_text(trim = TRUE)
 
   bioUrl <- paste0(url, "bio")
   bioPage <- read_html(bioUrl)
   biography <-
-    bioPage %>% html_node('#biotext') %>% html_text(trim = TRUE)
+    bioPage |> html_node('#biotext') |> html_text(trim = TRUE)
 
   contactUrl  <- paste0(url, "contact")
   contactPage <- read_html(contactUrl)
   email <-
-    contactPage %>% html_node('.member-email') %>% html_text(trim = TRUE)
+    contactPage |> html_node('.member-email') |> html_text(trim = TRUE)
   results <- data.frame(name, district, biography, email)
   return (results)
 }

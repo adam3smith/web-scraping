@@ -5,8 +5,9 @@ layout: default
 ---
 
 ## The tidyverse
-* Within R, we're going to be using a set of packages that are part of what is called the "tidyverse". For those packages, the symbol `%>%` (referred to as a "pipe") is of particular importance: it effectively passes an argument on from left to right, serving as the first argument of the next function. A example will help make this clear:
-In `2 + 3 %>%  + 7` the 5 before the `%>%` gets passed on as the x, so the total is 12
+* Within R, we're going to be using a set of packages that are part of what is called the "tidyverse". These used to be distinguished by a special symbol called a "pipe": `%>%`. The tidyverse pipe was so successful that the same functionality is now available in "base R" -- it just looks slightly differently: `|>`.
+How does the pipe work? It passes whetever is on the left side of the pipe as the first argument to the right side of the pipe:
+- If we want to combine two strings, we can use `paste0("Data", "Science)`. With a pipe, we can write the same thing as `"Data" |> paste0("Science")`
    * If this isn't completely clear, don't worry about it. The example later on make this very intuitive.
 
 ## Setting up our R environment

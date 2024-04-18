@@ -22,7 +22,7 @@ This looks like a very young assembly with some very old members!
 Let's look at the oldest ones:
 
 ```
-arrange(fullAssembly, yearSince) %>% head()
+arrange(fullAssembly, yearSince) |> head()
 ```
 
 
@@ -31,8 +31,8 @@ Let's create subsets for parties?
 
 ```
 # Create party subsets
-assemblyDem <- fullAssembly %>% filter(party == "Democratic")
-assemblyRep <- fullAssembly %>% filter(party == "Republican")
+assemblyDem <- fullAssembly |> filter(party == "Democratic")
+assemblyRep <- fullAssembly |> filter(party == "Republican")
 ```
 Look at how they differ:
 ```
@@ -44,8 +44,8 @@ This looks quite different! Democrats have some long-serving members, Republican
 This becomes even clearer when we graph this in parallel violin plots:
 ```
 ageViolin <-
-  fullAssembly %>% filter(party == "Republican" |
-                            party == "Democratic") %>% ggplot(aes(y = yearSince, x = party)) +
+  fullAssembly |> filter(party == "Republican" |
+                            party == "Democratic") |> ggplot(aes(y = yearSince, x = party)) +
   coord_flip()+
   geom_violin(trim=FALSE)+
   geom_boxplot(width=0.1) +
@@ -75,7 +75,7 @@ Next we can create some world clouds. Quanteda actually has a feature for contra
 ```
 bio_wordCloud <- function(data){
   bioTokens <- tokenize_bios(data)
-  dfmat_bio <- dfm(bioTokens) %>%
+  dfmat_bio <- dfm(bioTokens) |>
     dfm_trim(
       min_termfreq = 0.8,
       termfreq_type = "quantile",
@@ -97,7 +97,7 @@ topicTerms <- function(data, k = 6) {
   # From https://tutorials.quanteda.io/machine-learning/topicmodel/
   bioTokens <- tokenize_bios(data)
   
-  dfmat_bio <- dfm(bioTokens) %>%
+  dfmat_bio <- dfm(bioTokens) |>
     dfm_trim(
       min_termfreq = 0.8,
       termfreq_type = "quantile",

@@ -19,13 +19,13 @@ We can now merge the two datasets. The best variable for this is going to be the
 
 For 1), there's a nifty command `str_remove()` in the `stringr` package:
 ```
-bpTable$Office <- bpTable$Office %>% str_remove("New York State ")
+bpTable$Office <- bpTable$Office |> str_remove("New York State ")
 ```
 
 For 2), there are a ton of ways to do this. The `dplyr` package has a particular useful one, called `rename`. While we're using this, let's give the other variable useful names, too:
 ```
 bpTable <-
-  bpTable %>% rename(district = Office,
+  bpTable |> rename(district = Office,
                      memberSince = `Date assumed office`,
                      party = Party)
 ```
@@ -70,4 +70,4 @@ How would you go about doing that?
 
 What sorts of analyses could we run with this data?
 
-**[Go to the next page](data analysis)**
+**[Go to the next page](data-analysis)**

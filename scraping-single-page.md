@@ -10,7 +10,7 @@ layout: default
 `page <- read_html("https://nyassembly.gov/mem/Khaleel-M-Anderson")`
 * We can use the selector gadget to find a good CSS selector for the name  `#head-mem-name`.
 Using this with our R functions:
-`name <-page%>% html_node("#head-mem-name") %>% html_text(trim = TRUE)`
+`name <-page |> html_node("#head-mem-name") |> html_text(trim = TRUE)`
 
 * We can look at this simply by using `name` in R
 
