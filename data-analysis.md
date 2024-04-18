@@ -54,7 +54,7 @@ ageViolin
 ```
 What an interesting difference! We have a couple of research projects right there? Why is this? Does it affect how the two parties behave in the assembly? Is it similar to other states?
 
-# Topic modeling
+## Topic modeling
 We have all this text! Let's do some automated text analysis. We'll use the `quanteda` library. We first need to tokenize the data. Let's create a function that performs standard steps for this:
 ```
 tokenize_bios <- function (data){

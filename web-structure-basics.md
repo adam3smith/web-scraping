@@ -37,7 +37,7 @@ Here's how a *very* simple web page may look like
   * The `head` is not visible in the browser window, but often contains metadata, including the "title" that's displayed in your open browser tab
   * Elements like `h1` which are headings. There should only be one `h1` element, but there can be multiple `h2`, `h3`, etc.
   * Elements like `div`, `span`, and `p` which structure how text and images are displayed on the page.
-* Modern website, however, have one more feature, however, that adds to their structure. Every element can have one or more "attributes" that are included in the beginning tag of the node like so:
+* Modern websites, however, have one more feature, however, that adds to their structure. Every element can have one or more "attributes" that are included in the beginning tag of the node like so:
 
 ```
 <div class="article-text">Some text</div>
